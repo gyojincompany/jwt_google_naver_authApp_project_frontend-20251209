@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# AuthApp Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React 기반의 인증 시스템 프론트엔드입니다.
 
-## Available Scripts
+## 프로젝트 구조
 
-In the project directory, you can run:
+```
+auth-frontend/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Navbar.js
+│   │   ├── ProtectedRoute.js
+│   │   └── Router.js
+│   ├── contexts/
+│   │   └── AuthContext.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── Login.js
+│   │   ├── Signup.js
+│   │   ├── Dashboard.js
+│   │   ├── AdminPanel.js
+│   │   └── OAuth2Redirect.js
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+└── package.json
+```
 
-### `npm start`
+## 설치 및 실행
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. 의존성 설치
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `npm test`
+### 2. 개발 서버 실행
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm start
+```
 
-### `npm run build`
+앱이 [http://localhost:3000](http://localhost:3000)에서 실행됩니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. 빌드
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 주요 기능
 
-### `npm run eject`
+### 🎨 디자인
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 반응형 디자인 (모바일, 태블릿, 데스크톱)
+- 그라데이션 배경 및 애니메이션
+- Lucide React 아이콘
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🔐 인증
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- JWT 토큰 기반 인증
+- 이메일/비밀번호 로그인
+- Google OAuth2 로그인
+- Naver OAuth2 로그인
+- 자동 토큰 갱신
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 📱 페이지
 
-## Learn More
+- **Home**: 랜딩 페이지
+- **Login**: 로그인 페이지 (OAuth 버튼 포함)
+- **Signup**: 회원가입 페이지
+- **Dashboard**: 사용자 대시보드
+- **Admin Panel**: 관리자 전용 패널
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🛡️ 보안
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Protected Routes
+- Role 기반 접근 제어
+- 자동 로그아웃 (401 응답)
 
-### Code Splitting
+## API 연동
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+백엔드 서버는 `http://localhost:8888`에서 실행되어야 합니다.
 
-### Analyzing the Bundle Size
+연동되는 엔드포인트:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `POST /api/auth/login` - 로그인
+- `POST /api/auth/signup` - 회원가입
+- `GET /api/user/profile` - 프로필 조회
+- `GET /api/user/dashboard` - 사용자 대시보드
+- `GET /api/admin/users` - 전체 사용자 조회 (ADMIN)
+- `GET /api/admin/dashboard` - 관리자 대시보드 (ADMIN)
+- `DELETE /api/admin/users/:id` - 사용자 삭제 (ADMIN)
 
-### Making a Progressive Web App
+## 테스트 계정
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Admin**: admin@example.com / admin123
+- **User**: user@example.com / user123
 
-### Advanced Configuration
+## 사용된 기술
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- React 18
+- Lucide React (아이콘)
+- Custom Router (React Router 없이 구현)
+- Context API (상태 관리)
 
-### Deployment
+## 환경 변수
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+필요한 경우 `.env` 파일을 생성하여 백엔드 URL을 설정할 수 있습니다:
 
-### `npm run build` fails to minify
+```
+REACT_APP_API_URL=http://localhost:8888
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 브라우저 지원
+
+- Chrome (최신)
+- Firefox (최신)
+- Safari (최신)
+- Edge (최신)
+
+## 라이선스
+
+MIT
