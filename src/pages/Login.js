@@ -38,8 +38,8 @@ const Login = () => {
           <div className="login-icon">
             <User className="icon-white" />
           </div>
-          <h2 className="login-title">Welcome Back</h2>
-          <p className="login-subtitle">Sign in to your account</p>
+          <h2 className="login-title">다시 오신 것을 환영합니다!</h2>
+          <p className="login-subtitle">계정에 로그인하세요.</p>
         </div>
 
         {error && <div className="error-box">{error}</div>}
@@ -89,33 +89,37 @@ const Login = () => {
             onClick={() => handleOAuthLogin("google")}
             className="oauth-btn"
           >
-            <svg className="oauth-icon" viewBox="0 0 24 24">
-              <path
-                fill="#4285F4"
-                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v..."
-              ></path>
-            </svg>
+            <img
+              src="/images/google.png"
+              alt="Google Logo"
+              className="oauth-icon-img"
+            />
             Google
           </button>
 
+          {/* Naver Login */}
           <button
             onClick={() => handleOAuthLogin("naver")}
             className="oauth-btn"
           >
-            <div className="naver-square"></div>
+            <img
+              src="/images/naver.png"
+              alt="Naver Logo"
+              className="oauth-icon-img"
+            />
             Naver
           </button>
         </div>
 
         <p className="signup-text">
-          Don't have an account?{" "}
+          계정이 없으신가요?{" "}
           <button onClick={() => navigate("/signup")} className="signup-btn">
-            Sign up
+            회원가입
           </button>
         </p>
 
         <div className="test-accounts">
-          <p className="test-title">Test Accounts:</p>
+          <p className="test-title">테스트 관리자 및 일반 유저 계정:</p>
           <p>Admin: admin@example.com / admin123</p>
           <p>User: user@example.com / user123</p>
         </div>

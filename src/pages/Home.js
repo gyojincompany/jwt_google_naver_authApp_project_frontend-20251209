@@ -13,7 +13,7 @@ const Home = () => {
       <div className="home-inner">
         <div className="text-center">
           <h1 className="home-title">
-            환영합니다! <span className="title-accent">AuthApp</span>
+            Welcome! <span className="title-accent">Auth Test App</span>
           </h1>
 
           <p className="home-subtitle">

@@ -22,7 +22,7 @@ const Navbar = () => {
           {/* LOGO */}
           <div className="navbar-logo" onClick={() => navigate("/")}>
             <Camera className="h-8 w-8" color="white" />
-            <span>AuthApp</span>
+            <span>Auth Test App</span>
           </div>
 
           {/* DESKTOP MENU */}
