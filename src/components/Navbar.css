@@ -1,0 +1,171 @@
+/* NAVBAR 기본 스타일 */
+.navbar {
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* layout */
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  align-items: center;
+}
+
+/* 로고 */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-logo span {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+/* DESKTOP 메뉴 */
+.navbar-menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.navbar-btn {
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  transition: background 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ADMIN 버튼 */
+.navbar-admin {
+  color: white;
+  background: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  transition: 0.2s;
+}
+
+.navbar-admin:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 사용자 정보 */
+.navbar-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+/* logout 버튼 */
+.navbar-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #ef4444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.navbar-logout:hover {
+  background: #dc2626;
+}
+
+/* MOBILE MENU 버튼 */
+.navbar-mobile-btn {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  color: white;
+  transition: background 0.2s;
+}
+
+.navbar-mobile-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .navbar-mobile-btn {
+    display: none;
+  }
+}
+
+/* MOBILE 메뉴 패널 */
+.mobile-menu {
+  background: #1e3a8a;
+  border-top: 1px solid #3b82f6;
+  padding: 0.5rem;
+}
+
+.mobile-menu-item {
+  width: 100%;
+  text-align: left;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: none;
+  background: none;
+  transition: 0.2s;
+}
+
+.mobile-menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile user info */
+.mobile-user-info {
+  padding: 0.75rem;
+  border-bottom: 1px solid #3b82f6;
+  color: white;
+}
+
+.mobile-user-info-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Mobile logout */
+.mobile-logout {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  color: white;
+  border-radius: 0.375rem;
+  background: none;
+  border: none;
+}
+
+.mobile-logout:hover {
+  background: #ef4444;
+}

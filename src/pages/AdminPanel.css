@@ -1,0 +1,232 @@
+/* 전체 화면 */
+.admin-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #ebf3ff, #f3e8ff);
+  padding: 40px 0;
+}
+
+/* 컨텐츠 wrapper */
+.admin-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 헤더 */
+.admin-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-header-title h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.admin-header-icon {
+  width: 40px;
+  height: 40px;
+  color: #d97706;
+}
+
+.admin-header-subtext {
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* 로딩 */
+.admin-loading-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #2563eb;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* 통계 카드 */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.admin-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-card.gradient {
+  background: linear-gradient(to bottom right, #3b82f6, #9333ea);
+  color: white;
+}
+
+.admin-card-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.admin-card-label.white {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.admin-card-value {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.admin-card-value.white {
+  color: white;
+}
+
+.admin-card-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-icon-box {
+  padding: 12px;
+  border-radius: 12px;
+  background: #f3f4f6;
+}
+
+.admin-icon-box.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.admin-icon-box.yellow {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.admin-icon-box.white-border {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* 유저 테이블 */
+.admin-user-table-wrapper {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-user-table-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-user-table-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.admin-table-scroll {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table thead {
+  background: #f9fafb;
+}
+
+.admin-table th {
+  padding: 16px 24px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #6b7280;
+  text-align: left;
+}
+
+.admin-table td {
+  padding: 16px 24px;
+  font-size: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.admin-table tr:hover {
+  background: #f9fafb;
+}
+
+/* 유저 info */
+.admin-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-avatar {
+  background: #dbeafe;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+
+/* 역할 뱃지 */
+.admin-role {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-role-admin {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.admin-role-user {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.admin-provider {
+  background: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 삭제 버튼 */
+.admin-delete-btn {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.admin-delete-btn:hover {
+  color: #b91c1c;
+}
+
+.admin-delete-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
