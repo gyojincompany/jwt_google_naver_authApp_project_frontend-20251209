@@ -14,9 +14,12 @@ const OAuth2Redirect = () => {
       localStorage.setItem("token", token);
       localStorage.setItem("refreshToken", refreshToken);
 
-      fetch("http://localhost:8888/api/user/profile", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      fetch(
+        "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/user/profile",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           const userData = {

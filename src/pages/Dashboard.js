@@ -13,7 +13,7 @@ const Dashboard = () => {
     const fetchProfile = async () => {
       try {
         const response = await fetchWithAuth(
-          "http://localhost:8888/api/user/profile"
+          "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/user/profile"
         );
         const data = await response.json();
         setProfile(data);

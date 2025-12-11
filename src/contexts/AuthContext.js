@@ -24,11 +24,15 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const response = await fetch("http://localhost:8888/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
+    const response = await fetch(
+      "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/auth/login",
+      {
+        // const response = await fetch("http://localhost:8888/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      }
+    );
 
     if (!response.ok) {
       const error = await response.json();
@@ -47,11 +51,14 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signup = async (email, password, name) => {
-    const response = await fetch("http://localhost:8888/api/auth/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password, name }),
-    });
+    const response = await fetch(
+      "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/auth/signup",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, name }),
+      }
+    );
 
     if (!response.ok) {
       const error = await response.json();
