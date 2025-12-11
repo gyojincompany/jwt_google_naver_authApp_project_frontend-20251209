@@ -1,0 +1,39 @@
+name: Deploy Frontend to S3
+
+on:
+  push:
+    branches: ["main"]   # main 브랜치 push 시 자동 배포
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 소스 체크아웃
+      - uses: actions/checkout@v3
+
+      # 2. Node.js 설치
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3. 리액트 의존성 설치
+      - name: Install dependencies
+        run: npm install
+
+      # 4. 리액트 빌드
+      - name: Build React App
+        run: npm run build
+
+      # 5. AWS 자격증명 설정
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # 6. S3로 업로드
+      - name: Upload build folder to S3
+        run: aws s3 sync ./build s3://${{ secrets.S3_BUCKET }} --delete
