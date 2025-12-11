@@ -74,7 +74,7 @@ const Home = () => {
               </div>
               <h3 className="card-title">역할 기반 권한</h3>
               <p className="card-text">
-                사용자/관리자 권한에 따른 다양한 접근 제어 기능 제공
+                사용자/관리자 권한에 따른 다양한 접근 제어 기능 연습 제공
               </p>
             </div>
           </div>
