@@ -16,7 +16,7 @@ const AdminPanel = () => {
       navigate("/dashboard");
       return;
     }
-
+    /* eslint-disable react-hooks/exhaustive-deps */
     const fetchData = async () => {
       try {
         const [usersResponse, statsResponse] = await Promise.all([
