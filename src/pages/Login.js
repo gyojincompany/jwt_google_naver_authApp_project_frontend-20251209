@@ -28,7 +28,8 @@ const Login = () => {
   };
 
   const handleOAuthLogin = (provider) => {
-    window.location.href = `http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/oauth2/authorization/${provider}`;
+    window.location.href = `https://d34u094mtoqiq.cloudfront.net/oauth2/authorization/${provider}`;
+    // window.location.href = `http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/oauth2/authorization/${provider}`;
   };
 
   return (

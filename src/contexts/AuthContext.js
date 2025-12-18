@@ -25,7 +25,8 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     const response = await fetch(
-      "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/auth/login",
+      // "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/auth/login",
+      "https://d34u094mtoqiq.cloudfront.net/api/auth/login",
       {
         // const response = await fetch("http://localhost:8888/api/auth/login", {
         method: "POST",
