@@ -13,7 +13,7 @@ const Dashboard = () => {
     const fetchProfile = async () => {
       try {
         const response = await fetchWithAuth(
-          "https://d34u094mtoqiq.cloudfront.net/api/user/profile"
+          "https://3.36.238.226.sslip.io/api/user/profile"
           // "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/user/profile"
         );
         const data = await response.json();

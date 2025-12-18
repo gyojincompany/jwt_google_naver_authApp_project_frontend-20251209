@@ -16,7 +16,7 @@ const OAuth2Redirect = () => {
 
       fetch(
         // "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/user/profile",
-        "https://d34u094mtoqiq.cloudfront.net/api/user/profile",
+        "https://3.36.238.226.sslip.io/api/user/profile",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

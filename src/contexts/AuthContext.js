@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     const response = await fetch(
       // "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/auth/login",
-      "https://d34u094mtoqiq.cloudfront.net/api/auth/login",
+      "https://3.36.238.226.sslip.io/api/auth/login",
       {
         // const response = await fetch("http://localhost:8888/api/auth/login", {
         method: "POST",
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (email, password, name) => {
     const response = await fetch(
-      "https://d34u094mtoqiq.cloudfront.net/api/auth/signup",
+      "https://3.36.238.226.sslip.io/api/auth/signup",
       // "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/auth/signup",
       {
         method: "POST",
