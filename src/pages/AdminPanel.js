@@ -22,10 +22,10 @@ const AdminPanel = () => {
         const [usersResponse, statsResponse] = await Promise.all([
           fetchWithAuth(
             // "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/admin/users"
-            "https://3.36.238.226.sslip.io/api/admin/users"
+            "https://d34u094mtoqiq.cloudfront.net/api/admin/users"
           ),
           fetchWithAuth(
-            "https://3.36.238.226.sslip.io/api/admin/dashboard"
+            "https://d34u094mtoqiq.cloudfront.net/api/admin/dashboard"
             // "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/admin/dashboard"
           ),
         ]);
@@ -47,7 +47,7 @@ const AdminPanel = () => {
 
     try {
       await fetchWithAuth(
-        `https://3.36.238.226.sslip.io/api/admin/users/${userId}`,
+        `https://d34u094mtoqiq.cloudfront.net/api/admin/users/${userId}`,
         {
           method: "DELETE",
         }
