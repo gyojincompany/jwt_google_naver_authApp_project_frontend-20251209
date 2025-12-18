@@ -53,7 +53,8 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (email, password, name) => {
     const response = await fetch(
-      "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/auth/signup",
+      "https://d34u094mtoqiq.cloudfront.net/api/auth/signup",
+      // "http://ec2-3-36-238-226.ap-northeast-2.compute.amazonaws.com:8888/api/auth/signup",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
